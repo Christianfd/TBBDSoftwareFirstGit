@@ -24,10 +24,7 @@ rl.question("What is your name?", function(name){
    
 });
 
-
-
-
 rl.on("close",function(){
-    console.log("\nBYE BYE !!!");
+    console.log("Alright, see you later..");
     process.exit(0);
 });
