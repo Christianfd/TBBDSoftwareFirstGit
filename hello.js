@@ -4,10 +4,28 @@ const rl = readline.createInterface({
     output: process.stdout
 });
 
-rl.question("Whait is your name?", function(name){
+function continueChat(){
+ rl.question("Want to exit program? y/n",function(answer){
+    answer = answer.toLowerCase()
+    if (answer == "y" || answer == "yes"){
+      rl.close();
+    }
+    else if (answer == "n" || answer =="no"){
+      console.log("Okay, guess we'll just idle here");
+    } else {
+     continueChat();
+    };
+  });
+};
+
+rl.question("What is your name?", function(name){
     console.log(`Hello ${name}, welcome to my repository`);
-    rl.close();
+    continueChat();
+   
 });
+
+
+
 
 rl.on("close",function(){
     console.log("\nBYE BYE !!!");
